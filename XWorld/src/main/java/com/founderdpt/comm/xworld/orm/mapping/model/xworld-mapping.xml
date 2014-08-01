@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xworld-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="xworld-mapping.xsd">
+	<file>system/tempbook.xml</file>
+	<xpath>/book</xpath>
+	<!-- name为主键名称    ，type分为node 和 attr -->
+	<id name="id" type="node">
+		<generator class="sequence"><!-- uuid -->
+        	 <param name="sequence" value="SEQ_ITEM_ID" />
+    	</generator>
+	</id>
+	<column name="userId">
+ 		<generator class="sequence"><!-- uuid -->
+        	 <param name="sequence"  value="SEQ_ITEM_ID"></param>
+    	</generator>
+  </column>
+</xworld-mapping>
+
+

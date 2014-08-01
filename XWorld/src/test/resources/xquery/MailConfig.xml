@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="mail">
+	<getPeopleBydept>
+		<if  test="dept != null">
+			<![CDATA[
+					let $pxml :=collection("people")/groups
+					let $depts:=$pxml//dept[@name=normalize-space("${dept}")]//dept/@name
+		
+					return  ($pxml/group[normalize-space(@name)=normalize-space("${dept}")]/people,
+								for $x in $depts
+								return $pxml/group[normalize-space(@name)=normalize-space(xs:string($x))]/people
+						)
+				]]>  
+		</if>
+		<where>
+			<if test="location =='盛夏路608'">
+				盛夏路608盛夏路608盛夏路608盛夏路608
+			</if>
+			<if test="testif">
+				testif = testIF
+			</if>
+			<if test="testif">
+				testif = testIF
+			</if>
+			<if test="testif>3">
+				testif >3
+			</if>
+			<if test="testif in{3,4,5}">
+				testif in{3,4,5}
+			</if>
+			<if test="testif==5">
+				testif==5
+			</if>
+		</where>
+		<choose>
+			<when test="location1 ==sdfg">
+				 location =${location1}		
+			</when>
+			<when test="location =='盛夏路608'">
+				location =${location}		
+			</when>
+			<otherwise>
+	      	  	and owner = "owner1"
+			</otherwise>
+		</choose> 
+		select * from dpt where stuID in 
+		<foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+			${item}
+		</foreach>
+	 
+	</getPeopleBydept>
+	<savePeople>
+			<![CDATA[
+				replace node  collection("people/people")/groups with ${xml}
+			]]>
+	</savePeople>
+	<getPeopleBydept2>
+		<if  test="dept != null">
+			<![CDATA[
+					let $pxml :=collection("people")/groups
+					let $depts:=$pxml//dept[@name=normalize-space("${dept}")]//dept/@name
+		
+					return  ($pxml/group[normalize-space(@name)=normalize-space("${dept}")]/people,
+								for $x in $depts
+								return $pxml/group[normalize-space(@name)=normalize-space(xs:string($x))]/people
+						)
+				]]>  
+		</if>
+		${test2}
+	<!-- 	select * from dpt where stuID in 
+		<foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+			${item}		
+		</foreach> -->
+	 
+	</getPeopleBydept2>
+</mapper>

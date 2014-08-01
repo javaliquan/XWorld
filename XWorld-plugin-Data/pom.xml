@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.founderdpt.comm.XWorld</groupId>
+	<artifactId>XWorld-plugin-Data</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>XWorld-plugin-Data</name>
+	<description>XWorld-plugin-Data</description>
+	<properties>
+		<!-- Xworld版本 -->
+		<com.founderdpt.comm.xworld.version>1.0.7-SNAPSHOT</com.founderdpt.comm.xworld.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.founderdpt.comm</groupId>
+			<artifactId>XWorld</artifactId>
+			<version>${com.founderdpt.comm.xworld.version}</version>
+		</dependency>
+			<!-- 自定义实现 -->
+		<dependency>
+			<groupId>javax.xml</groupId>
+			<artifactId>xquery</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.founderdpt</groupId>
+			<artifactId>clientsdk</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema 
+   elementFormDefault="qualified"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="xworld-mapping">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="file" maxOccurs="1" minOccurs="1" type="xs:token"/>
+            <xs:element name="xpath" maxOccurs="1" minOccurs="1" type="xs:token"/>
+            <xs:element name="id" maxOccurs="1" minOccurs="1">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="generator">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="param" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:attribute name="name" type="xs:token">
+                                    </xs:attribute>
+                                    <xs:attribute name="value" type="xs:token">
+                                    </xs:attribute>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                           <xs:attribute name="class" type="xs:token">
+                           </xs:attribute>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:token">
+                  </xs:attribute>
+                  <xs:attribute name="type" type="xs:token">
+                  </xs:attribute>
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="column" maxOccurs="unbounded">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="generator">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="param" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:attribute name="name" type="xs:token">
+                                    </xs:attribute>
+                                    <xs:attribute name="value" type="xs:token">
+                                    </xs:attribute>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                           <xs:attribute name="class" type="xs:token">
+                           </xs:attribute>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:token">
+                  </xs:attribute>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.founderdpt.comm</groupId>
+	<artifactId>Xworld-plugin-basex</artifactId>
+	<version>1.0.6</version>
+
+	<!-- <version>1.0.5-SNAPSHOT</version> -->
+	<properties>
+		<!-- Xworld版本 -->
+		<com.founderdpt.comm.xworld.version>1.0.6</com.founderdpt.comm.xworld.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.founderdpt.comm</groupId>
+			<artifactId>XWorld</artifactId>
+			<version>${com.founderdpt.comm.xworld.version}</version>
+		</dependency>
+		<!-- BASEX -->
+		<dependency>
+			<groupId>net.xqj</groupId>
+			<artifactId>basex-xqj</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.xqj2</groupId>
+			<artifactId>xqj2</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.xquery</groupId>
+			<artifactId>xqj-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.basex</groupId>
+			<artifactId>basex</artifactId>
+			<version>7.6</version>
+		</dependency>
+		<!-- BASEX END -->
+
+	</dependencies>
+	<!-- jdk1.6 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- jetty 插件 -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.0.1.v20110908</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webAppConfig>
+						<contextPath>/backmanager</contextPath>
+					</webAppConfig>
+				</configuration>
+			</plugin>
+			<!-- 上传源码插件 -->
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<attach>true</attach>
+					<encoding>UTF-8</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>founderdpt</id>
+			<name>founderdpt</name>
+			<url>http://192.168.8.253:8081/nexus/content/groups/com.founderdpt/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>founderdpt</id>
+			<name>founderdpt</name>
+			<url>http://192.168.8.253:8081/nexus/content/groups/com.founderdpt/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	<!--发布库 mvn clean deploy -->
+	<distributionManagement>
+		<repository>
+			<id>founderdpt-releases</id>
+			<name>Nexus Release Repository</name>
+			<url>http://192.168.8.253:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>founderdpt-snapshots</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://192.168.8.253:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>
