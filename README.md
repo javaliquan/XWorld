@@ -2,7 +2,7 @@ XWorld
 ======
 XQJ(XQuery API for Java  JSR 225) Framework, Similar mybatis  Framework 
 
-Stand by  XQJ impl FounderXMLDB BASEXDB  MarkLogic  Sedna
+Stand by FounderXMLDB,BASEXDB,MarkLogic,Sedna or XQJ impl
 
 Plug-in:
 
